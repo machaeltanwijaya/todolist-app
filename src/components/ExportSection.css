@@ -1,0 +1,24 @@
+/* Export Section */
+.export-section {
+    margin-bottom: 25px;
+    text-align: right;
+}
+
+/* Export/Import Buttons */
+.btn-export {
+    background-color: #9b59b6;
+    color: white;
+}
+
+.btn-export:hover {
+    background-color: #8e44ad;
+}
+
+.btn-import {
+    background-color: #1abc9c;
+    color: white;
+}
+
+.btn-import:hover {
+    background-color: #16a085;
+}

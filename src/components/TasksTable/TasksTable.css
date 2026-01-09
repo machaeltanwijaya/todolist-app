@@ -1,0 +1,226 @@
+/* Tasks Table */
+.tasks-table-container {
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.tasks-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.tasks-table th,
+.tasks-table td {
+    padding: 12px 8px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+    vertical-align: middle;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/* Column widths */
+.tasks-table th:nth-child(1),
+.tasks-table td:nth-child(1) {
+    width: 10%;
+    min-width: 80px;
+    text-align: center;
+}
+
+.tasks-table th:nth-child(2),
+.tasks-table td:nth-child(2) {
+    width: 12%;
+}
+
+.tasks-table th:nth-child(3),
+.tasks-table td:nth-child(3) {
+    width: 32%;
+}
+
+.tasks-table th:nth-child(4),
+.tasks-table td:nth-child(4) {
+    width: 12%;
+    white-space: nowrap;
+}
+
+.tasks-table th:nth-child(5),
+.tasks-table td:nth-child(5) {
+    width: 20%;
+    white-space: nowrap;
+}
+
+.tasks-table th:nth-child(6),
+.tasks-table td:nth-child(6) {
+    width: 16%;
+}
+
+/* Description column styling */
+.tasks-table td:nth-child(3) {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 300px;
+}
+
+.tasks-table th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+}
+
+.tasks-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.tasks-table td.completed {
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+/* Checkbox Styling */
+.status-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Priority Badges */
+.priority-badge {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.priority-low {
+    background-color: #d5f4e6;
+    color: #27ae60;
+}
+
+.priority-medium {
+    background-color: #fef3cd;
+    color: #f39c12;
+}
+
+.priority-high {
+    background-color: #fadbd8;
+    color: #e74c3c;
+}
+
+/* Actions Column */
+.actions-cell {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Action Buttons */
+.btn-edit {
+    background-color: #f39c12;
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-edit:hover {
+    background-color: #e67e22;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+/* No Tasks Message */
+.no-tasks {
+    text-align: center;
+    color: #95a5a6;
+    padding: 30px;
+    font-style: italic;
+}
+
+/* Completed Row Style */
+.task-completed {
+    background-color: #f0f9f0;
+}
+
+.task-completed td {
+    color: #7f8c8d;
+}
+
+/* Completed Text Style */
+.completed-text {
+    text-decoration: line-through;
+    color: #7f8c8d !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tasks-table {
+        font-size: 0.85rem;
+    }
+
+    .tasks-table th,
+    .tasks-table td {
+        padding: 10px 6px;
+    }
+
+    .tasks-table th:nth-child(3),
+    .tasks-table td:nth-child(3) {
+        max-width: 200px;
+    }
+
+    .actions-cell {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn-edit,
+    .btn-delete {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+
+    .priority-badge {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+    }
+
+    .status-checkbox {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tasks-table {
+        font-size: 0.8rem;
+    }
+
+    .tasks-table th,
+    .tasks-table td {
+        padding: 8px 4px;
+    }
+
+    .tasks-table th:nth-child(3),
+    .tasks-table td:nth-child(3) {
+        max-width: 150px;
+    }
+}
