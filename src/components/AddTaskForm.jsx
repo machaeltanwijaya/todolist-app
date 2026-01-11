@@ -1,19 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./AddTaskForm.css";
 
-export default function AddTaskForm({ onAddTask, editingTask, handleCancelEdit, onUpdateTask }) {
+export default function AddTaskForm({ onAddTask, editingTask, handleCancelEdit }) {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [taskPriority, setTaskPriority] = useState("medium");
   const [showError, setShowError] = useState(false);
-
-  useEffect(() => {
-    if (editingTask) {
-      setTaskTitle(editingTask.title);
-      setTaskDescription(editingTask.description || "");
-      setTaskPriority(editingTask.priority);
-    }
-  }, [editingTask]);
 
   const handleTitleChange = (event) => {
     setTaskTitle(event.target.value);
@@ -45,36 +37,14 @@ export default function AddTaskForm({ onAddTask, editingTask, handleCancelEdit, 
     }
   };
 
-  const handleEditTask = () => {
-    if (!taskTitle) {
-      setShowError(true);
-    } else {
-      setShowError(false);
-      onUpdateTask({
-        ...editingTask,
-        title: taskTitle,
-        description: taskDescription,
-        priority: taskPriority,
-      });
-
-      setTaskTitle("");
-      setTaskDescription("");
-      setTaskPriority("medium");
-      handleCancelEdit();
-    }
-  };
-
+  const handleEditTask = () => {};
   const handleCancel = () => {
-    setTaskTitle("");
-    setTaskDescription("");
-    setTaskPriority("medium");
-    setShowError(false);
     handleCancelEdit();
   };
 
   return (
     <div className="add-task-form">
-      <h2>{editingTask ? "Edit Task" : "Add New Task"}</h2>
+      <h2>Add New Task</h2>
       <div className="form-group">
         <input
           type="text"
